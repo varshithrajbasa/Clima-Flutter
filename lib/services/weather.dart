@@ -1,7 +1,7 @@
 import 'package:clima/services/location.dart';
 import 'package:clima/services/networking.dart';
 
-const apiKey = 'yourapikey';
+const apiKey = '8f3b9cee9ffd38016df4820de132976e';
 const url = 'https://api.openweathermap.org/data/2.5/weather';
 
 class WeatherModel {
@@ -9,7 +9,7 @@ class WeatherModel {
     Location location = Location();
     await location.getCurrentLocation();
     NetworkHelper networkHelper = NetworkHelper(
-        'url?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=metric');
+        '$url?lat=${location.latitude}&lon=${location.longitude}&appid=$apiKey&units=metric');
     var weatherData = await networkHelper.getData();
     return weatherData;
   }
